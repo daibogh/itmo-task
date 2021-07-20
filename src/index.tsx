@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {FontWrapper} from "./containers/helpers/FontWrapper";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <FontWrapper/>
+      <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
