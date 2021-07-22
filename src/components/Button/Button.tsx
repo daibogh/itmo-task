@@ -1,5 +1,6 @@
-import React from "react";
+import React, {HTMLAttributes, PropsWithChildren} from "react";
 import styled from 'styled-components/macro'
+import {BackgroundColor} from "../../styles/colors";
 export enum ButtonBorderRadius {
     circle = '100%'
 }
@@ -11,18 +12,18 @@ export enum ButtonColor {
 }
 type ButtonProps = {
     text?: string
-    borderRadius?: ButtonBorderRadius
+    borderRadius?: ButtonBorderRadius | string
     borderColor?: ButtonBorderColor
     color?: ButtonColor
     backgroundColor?: BackgroundColor
-}
+} & HTMLAttributes<HTMLButtonElement>
 const _Button = styled.button<ButtonProps>`
     color: ${({color}) => color};
     border-radius: ${({borderRadius}) => borderRadius};
-    border: ${({borderColor}) => `1px solid ${borderColor}`};
+    border: ${({borderColor}) => borderColor && `1px solid ${borderColor}`};
     background-color: ${({backgroundColor}) => backgroundColor};
 `
-const Button: React.FC<ButtonProps> = ({text, ...props}) => {
-    return <_Button {...props} type='button'>{text}</_Button>
+const Button: React.FC<PropsWithChildren<ButtonProps>> = ({children, ...props}) => {
+    return <_Button {...props} type='button'>{children}</_Button>
 }
 export default Button
