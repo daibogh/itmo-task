@@ -9,17 +9,12 @@ export enum ButtonBorderColor {
 export enum ButtonColor {
     white = 'white'
 }
-export enum ButtonBackgroundColor {
-    red = '#F21F5B',
-    blue = '#3951E7',
-    transparent = 'transparent'
-}
 type ButtonProps = {
     text?: string
     borderRadius?: ButtonBorderRadius
     borderColor?: ButtonBorderColor
     color?: ButtonColor
-    backgroundColor?: ButtonBackgroundColor
+    backgroundColor?: BackgroundColor
 }
 const _Button = styled.button<ButtonProps>`
     color: ${({color}) => color};
