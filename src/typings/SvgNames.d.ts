@@ -9,5 +9,6 @@ declare type SvgNames =
   | 'logo-bottom'
   | 'logo-top'
   | 'twitter'
+  | 'united-kingdom'
   | 'vk-no-bg'
   | 'vk'

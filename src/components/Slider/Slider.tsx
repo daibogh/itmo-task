@@ -14,6 +14,7 @@ import {
   mixinText_normal,
   mixinText_white,
 } from "../../styles/mixins/typography"
+import { scRespondTo } from "../../styles/helpers/respond-to"
 
 type SlideContent = {
   title: string
@@ -32,7 +33,10 @@ const Background = styled.div`
   overflow: hidden;
   width: 100vw;
   height: 256px;
-  padding: 104px 0;
+  padding: 30px 0;
+  ${scRespondTo.max} {
+    padding: 104px 0;
+  }
 `
 const Container = styled.div`
   display: grid;
@@ -87,7 +91,11 @@ const DetailsButton = styled(Button)`
   padding: 8px 24px;
   ${mixinText_18_32};
 `
-
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`
 const Slider: React.FC<SliderProps> = ({ content }) => {
   const {
     state: { title, description },
@@ -109,7 +117,7 @@ const Slider: React.FC<SliderProps> = ({ content }) => {
           </NavButton>
         </NavContainer>
 
-        <div>
+        <Content>
           <Title>{title}</Title>
           <Description>{description}</Description>
           <DetailsButton
@@ -119,7 +127,7 @@ const Slider: React.FC<SliderProps> = ({ content }) => {
           >
             Подробнее
           </DetailsButton>
-        </div>
+        </Content>
         <NavContainer>
           <NavButton
             borderColor={ButtonBorderColor.white}

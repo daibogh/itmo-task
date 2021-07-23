@@ -26,7 +26,7 @@
     "eject": "react-scripts eject",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "icon": "echo \"declare type SvgNames =\" > src/typings/SvgNames.d.ts; for f in ./public/svg/*.svg; do f1=${f##*/}; f2=${f1%.svg}; echo \"  | '$f2'\" >> src/typings/SvgNames.d.ts; done;",
+    "icon": "echo \"declare type SvgNames =\" > src/typings/SvgNames.d.ts; for f in ./src/svg/*.svg; do f1=${f##*/}; f2=${f1%.svg}; echo \"  | '$f2'\" >> src/typings/SvgNames.d.ts; done;",
     "lint": "eslint . --ext js,jsx,ts,tsx",
     "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix"
   },

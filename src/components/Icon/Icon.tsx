@@ -12,6 +12,7 @@ import logoBottom from "../../svg/logo-bottom.svg"
 import logoTop from "../../svg/logo-top.svg"
 import vk from "../../svg/vk.svg"
 import vkNoBg from "../../svg/vk-no-bg.svg"
+import unitedKingdom from "../../svg/united-kingdom.svg"
 
 const iconsMap: Record<SvgNames, any> = {
   "arrow-chevron-down": arrowDown,
@@ -26,6 +27,7 @@ const iconsMap: Record<SvgNames, any> = {
   twitter,
   vk,
   "vk-no-bg": vkNoBg,
+  "united-kingdom": unitedKingdom,
 }
 
 export type IconProps = {
