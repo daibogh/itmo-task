@@ -8,6 +8,7 @@ const _Image = styled.img`
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 `
 const FullImage = styled(_Image)`
   transition: opacity 400ms ease 0ms;

@@ -32,8 +32,9 @@ const Background = styled.div`
   align-items: center;
   overflow: hidden;
   width: 100vw;
-  height: 256px;
-  padding: 30px 0;
+  height: auto;
+  box-sizing: border-box;
+  padding: 30px 15px;
   ${scRespondTo.max} {
     padding: 104px 0;
   }
@@ -42,8 +43,8 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 40px auto 40px;
   column-gap: 32px;
-  width: 1360px;
-  height: 256px;
+  width: 100%;
+  height: auto;
 `
 const NavContainer = styled.div`
   display: flex;
@@ -84,6 +85,7 @@ const Description = styled.div`
   ${mixinText_normal};
   ${mixinText_left};
   margin-bottom: 24px;
+  min-height: 96px;
   width: 60%;
 `
 const DetailsButton = styled(Button)`

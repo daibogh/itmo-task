@@ -42,6 +42,7 @@ const RightItem = styled.div`
 
   ${mixinText_normal};
   align-items: center;
+  overflow: hidden;
 `
 const NavBar: React.FC = () => (
   <Container>

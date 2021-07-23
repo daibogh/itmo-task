@@ -11,6 +11,7 @@ const BREAKPOINTS = {
     xms: 640,
     'pre-sm': 760,
     sm: 768,
+    w800: 800,
     'pre-md': 1024,
     md: 1030,
     w1044: 1044,
