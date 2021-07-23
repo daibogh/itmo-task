@@ -23,6 +23,7 @@
     "no-underscore-dangle": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-pascal-case": "off",
+    "no-param-reassign": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ",.ts", ".tsx"] }],
     "prettier/prettier": [
       "error", {
