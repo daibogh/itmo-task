@@ -1,4 +1,4 @@
-import {css, FlattenSimpleInterpolation} from 'styled-components'
+import { css, FlattenSimpleInterpolation } from "styled-components"
 
 // SIZE
 export const mixinText_56_56 = css`
@@ -71,7 +71,7 @@ export const mixinText_gray = css`
   color: #222222;
 `
 export const mixinText_light_gray = css`
-  color: #C1C3C4;
+  color: #c1c3c4;
 `
 export const mixinText_white = css`
   color: #fff;
@@ -109,34 +109,35 @@ export const mixinText_right = css`
   text-align: right;
 `
 export const mixinTextSizes: Record<TextSize, FlattenSimpleInterpolation> = {
-    '56-56': mixinText_56_56,
-    '40-40': mixinText_40_40,
-    '32-38': mixinText_32_38,
-    '28-28': mixinText_28_28,
-    '18-32': mixinText_18_32,
-    '16-32': mixinText_16_32,
-    '16-24': mixinText_16_24,
-    '16-22': mixinText_16_22,
-    '14-24': mixinText_14_24,
-    '14-19': mixinText_14_19,
-    '13-24': mixinText_13_24,
-    '13-18': mixinText_13_18,
-    '12-16': mixinText_12_16,
+  "56-56": mixinText_56_56,
+  "40-40": mixinText_40_40,
+  "32-38": mixinText_32_38,
+  "28-28": mixinText_28_28,
+  "18-32": mixinText_18_32,
+  "16-32": mixinText_16_32,
+  "16-24": mixinText_16_24,
+  "16-22": mixinText_16_22,
+  "14-24": mixinText_14_24,
+  "14-19": mixinText_14_19,
+  "13-24": mixinText_13_24,
+  "13-18": mixinText_13_18,
+  "12-16": mixinText_12_16,
 }
 export const mixinTextColors: Record<TextColor, FlattenSimpleInterpolation> = {
-    'white': mixinText_white,
-    'gray': mixinText_gray,
-    'light-gray': mixinText_light_gray,
-    'black': mixinText_black,
-    'blue': mixinText_blue,
+  white: mixinText_white,
+  gray: mixinText_gray,
+  "light-gray": mixinText_light_gray,
+  black: mixinText_black,
+  blue: mixinText_blue,
 }
-export const mixinTextWeights: Record<TextWeight, FlattenSimpleInterpolation> = {
+export const mixinTextWeights: Record<TextWeight, FlattenSimpleInterpolation> =
+  {
     normal: mixinText_normal,
     medium: mixinText_medium,
-    bold: mixinText_bold
-}
+    bold: mixinText_bold,
+  }
 export const mixinTextAligns: Record<TextAlign, FlattenSimpleInterpolation> = {
-    left: mixinText_left,
-    right: mixinText_right,
-    center: mixinText_center
+  left: mixinText_left,
+  right: mixinText_right,
+  center: mixinText_center,
 }
