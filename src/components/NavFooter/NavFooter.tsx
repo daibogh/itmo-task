@@ -65,11 +65,15 @@ const SocialButtons = styled.div`
   display: flex;
   justify-content: space-between;
 `
+const StyledIcon = styled(Icon)`
+  object-fit: cover;
+  width: 100%;
+`
 const NavFooter: React.FC = () => (
   <Background>
     <Container>
       <FirstColumn>
-        <Icon name="logo-bottom" />
+        <StyledIcon name="logo-bottom" />
         <Text>
           Информация © 1993–2020 Университет ИТМО Разработка © 2020 Управление
           по развитию   и поддержке портала

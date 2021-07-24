@@ -20,8 +20,10 @@ type CardProps = {
 }
 const CardContainer = styled.div`
   width: calc(100% - 16px);
+  margin: 0 8px;
   ${scRespondTo.sm} {
     width: 364px;
+    margin: 0;
   }
   ${scRespondTo["pre-md"]} {
     width: 384px;

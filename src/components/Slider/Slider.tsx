@@ -8,6 +8,7 @@ import bg from "./bg.png"
 import { Icon } from "../Icon"
 import {
   mixinText_14_24,
+  mixinText_16_24,
   mixinText_18_32,
   mixinText_40_40,
   mixinText_56_56,
@@ -76,10 +77,13 @@ const StyledIconRight = styled(Icon)`
   transform: translate(-50%, -50%);
 `
 const Title = styled.div`
-  ${mixinText_40_40};
   ${mixinText_white};
   ${mixinText_bold};
   ${mixinText_left};
+  ${mixinText_18_32};
+  ${scRespondTo.sm} {
+    ${mixinText_40_40};
+  }
   margin-bottom: 32px;
   ${scRespondTo.max} {
     ${mixinText_56_56};
@@ -90,6 +94,10 @@ const Description = styled.div`
   ${mixinText_white};
   ${mixinText_normal};
   ${mixinText_left};
+  display: none;
+  ${scRespondTo.xms} {
+    display: block;
+  }
   ${scRespondTo.max} {
     ${mixinText_18_32};
   }
