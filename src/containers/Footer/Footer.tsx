@@ -1,11 +1,13 @@
 import React from "react"
 import MapInfo from "../../components/MapInfo/MapInfo"
+import { NavFooter } from "../../components/NavFooter"
+import { DomainInfo } from "../../components/DomainInfo"
 
 const Footer: React.FC = () => (
   <div>
     <MapInfo />
-    <div>информация об университете</div>
-    <div>Правила использования информации в доменной зоне ifmo.ru </div>
+    <NavFooter />
+    <DomainInfo />
   </div>
 )
 

@@ -25,6 +25,7 @@
     "react/jsx-pascal-case": "off",
     "no-param-reassign": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "no-irregular-whitespace": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ",.ts", ".tsx"] }],
     "prettier/prettier": [
       "error", {

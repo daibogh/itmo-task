@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components/macro"
 import {
   mixinText_12_16,
-  mixinText_14_24,
   mixinText_16_24,
   mixinText_28_28,
   mixinText_bold,

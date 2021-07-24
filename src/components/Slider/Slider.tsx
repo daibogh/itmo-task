@@ -7,7 +7,9 @@ import { ButtonBorderColor, ButtonColor } from "../Button/Button"
 import bg from "./bg.png"
 import { Icon } from "../Icon"
 import {
+  mixinText_14_24,
   mixinText_18_32,
+  mixinText_40_40,
   mixinText_56_56,
   mixinText_bold,
   mixinText_left,
@@ -44,6 +46,7 @@ const Container = styled.div`
   grid-template-columns: 40px auto 40px;
   column-gap: 32px;
   width: 100%;
+  max-width: 1360px;
   height: auto;
 `
 const NavContainer = styled.div`
@@ -73,17 +76,23 @@ const StyledIconRight = styled(Icon)`
   transform: translate(-50%, -50%);
 `
 const Title = styled.div`
-  ${mixinText_56_56};
+  ${mixinText_40_40};
   ${mixinText_white};
   ${mixinText_bold};
   ${mixinText_left};
   margin-bottom: 32px;
+  ${scRespondTo.max} {
+    ${mixinText_56_56};
+  }
 `
 const Description = styled.div`
-  ${mixinText_18_32};
+  ${mixinText_14_24};
   ${mixinText_white};
   ${mixinText_normal};
   ${mixinText_left};
+  ${scRespondTo.max} {
+    ${mixinText_18_32};
+  }
   margin-bottom: 24px;
   min-height: 96px;
   width: 60%;

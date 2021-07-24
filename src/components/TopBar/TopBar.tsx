@@ -2,10 +2,7 @@ import React from "react"
 import styled from "styled-components/macro"
 import { Icon } from "../Icon"
 import { Link } from "../Link"
-import {
-  mixinText_16_32,
-  mixinText_18_32,
-} from "../../styles/mixins/typography"
+import { mixinText_16_32 } from "../../styles/mixins/typography"
 
 const Container = styled.div`
   background: linear-gradient(90deg, #3951e7 20.77%, #832ab9 91.64%);

@@ -49,6 +49,7 @@ const CardInfo = styled.div`
   color: #6a6a6a;
   ${mixinText_12_16};
   display: flex;
+  align-items: center;
 `
 const PostDate = styled.div`
   ${mixinText_uppercase};
@@ -57,6 +58,7 @@ const PostDate = styled.div`
 const SocialInfo = styled.div`
   margin-left: auto;
   display: flex;
+  align-items: center;
 `
 const VKIcon = styled(Icon)`
   margin-right: 8px;

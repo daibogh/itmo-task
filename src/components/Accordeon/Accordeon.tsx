@@ -10,11 +10,14 @@ import {
 } from "../../styles/mixins/typography"
 
 type AccordeonProps = {}
-const CardContainer = styled.div`
+const CardContainer = styled.div<{ isOpened: boolean }>`
   padding: 24px 32px;
   color: #222222;
   border: 1px solid #eaeffc;
   border-radius: 8px;
+  &:hover {
+    cursor: ${({ isOpened }) => (isOpened ? "inherit" : "pointer")};
+  }
 `
 const CardHeader = styled.div`
   display: flex;
@@ -40,8 +43,8 @@ const CardDetails = styled.div<{ isOpened: boolean }>`
 const Accordeon: React.FC<AccordeonProps> = (props) => {
   const [isOpened, toggle] = useToggle(false)
   return (
-    <CardContainer>
-      <CardHeader onClick={toggle}>
+    <CardContainer isOpened={isOpened} onClick={!isOpened ? toggle : undefined}>
+      <CardHeader onClick={isOpened ? toggle : undefined}>
         Робототехника <CardIcon isOpened={isOpened} name="arrow-chevron-down" />
       </CardHeader>
       <CardDetails isOpened={isOpened}>

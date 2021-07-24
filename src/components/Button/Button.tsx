@@ -21,8 +21,12 @@ type ButtonProps = {
 const _Button = styled.button<ButtonProps>`
   color: ${({ color }) => color};
   border-radius: ${({ borderRadius }) => borderRadius};
-  border: ${({ borderColor }) => borderColor && `1px solid ${borderColor}`};
+  border: ${({ borderColor }) =>
+    borderColor ? `1px solid ${borderColor}` : "none"};
   background-color: ${({ backgroundColor }) => backgroundColor};
+  &:hover {
+    cursor: pointer;
+  }
 `
 const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
   children,
