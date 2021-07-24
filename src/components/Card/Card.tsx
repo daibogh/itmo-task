@@ -1,5 +1,7 @@
-import React from "react"
+import React  from "react"
 import styled from "styled-components/macro"
+import { format, parseISO } from "date-fns"
+import { ru } from "date-fns/locale"
 import { scRespondTo } from "../../styles/helpers/respond-to"
 import {
   mixinText_12_16,
@@ -8,16 +10,10 @@ import {
 } from "../../styles/mixins/typography"
 import { Icon } from "../Icon"
 import { Image } from "../Image"
+import { NewsPayload } from "../../hooks/api/useNews"
+import { Link } from "../Link"
 
-type CardProps = {
-  id: number // Идентификатор новости
-  title: string // Название новости
-  image_small: string // Обложка новости
-  image_big: string // - Оригинал картинки новости
-  date: Date // - Дата публикации
-  url: string // - Ссылка на новость
-  lead: string // - Текст превью новости
-}
+type CardProps = NewsPayload
 const CardContainer = styled.div`
   width: calc(100% - 16px);
   margin: 0 8px;
@@ -32,6 +28,7 @@ const CardContainer = styled.div`
   background: #ffffff;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
   border-radius: 16px;
+  position: relative;
 `
 const ImageWrapper = styled.div`
   height: 224px;
@@ -71,29 +68,39 @@ const Description = styled.div`
   margin-top: 16px;
   ${mixinText_16_24};
 `
-const Card: React.FC<CardProps> = (props) => (
+const AbsoluteLink = styled(Link)`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`
+const Card: React.FC<CardProps> = ({
+  url,
+  image_big,
+  image_small,
+  title,
+  date,
+}) => (
   <CardContainer>
     <ImageWrapper>
-      <Image
-        alt="image"
-        thumb="https://news.itmo.ru/images/news/small/p10485.jpg"
-        src="https://news.itmo.ru/images/news/big/p10485.jpg"
-      />
+      <Image alt="image" thumb={image_small} src={image_big} />
     </ImageWrapper>
     <CardContent>
       <CardInfo>
-        <PostDate>2 декабря 2019</PostDate>
+        <PostDate>
+          {format(parseISO(date), "dd MMMM yyyy", {
+            locale: ru,
+          })}
+        </PostDate>
         <SocialInfo>
           <VKIcon name="vk-no-bg" />
           <div>Вконтакте</div>
         </SocialInfo>
       </CardInfo>
-      <Description>
-        Физарум//Перформер, 2019, Bioroboty019 это мультимедийный перформанс о
-        связи человеческого и нечеловеческого, представленный на Кураторском
-        форуме в Молодёжный...
-      </Description>
+      <Description>{title}</Description>
     </CardContent>
+    <AbsoluteLink href={url} rel="noopener nofollow" target="_blank" />
   </CardContainer>
 )
 export default Card

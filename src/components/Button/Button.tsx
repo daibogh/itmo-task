@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, PropsWithChildren } from "react"
+import React, {  PropsWithChildren } from "react"
 import styled from "styled-components/macro"
 import { BackgroundColor } from "../../styles/colors"
 
@@ -17,7 +17,7 @@ type ButtonProps = {
   borderColor?: ButtonBorderColor
   color?: ButtonColor
   backgroundColor?: BackgroundColor
-} & HTMLAttributes<HTMLButtonElement>
+} & React.ButtonHTMLAttributes<any>
 const _Button = styled.button<ButtonProps>`
   color: ${({ color }) => color};
   border-radius: ${({ borderRadius }) => borderRadius};
@@ -32,7 +32,7 @@ const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
   children,
   ...props
 }) => (
-  <_Button {...props} type="button">
+  <_Button type="button" {...props}>
     {children}
   </_Button>
 )

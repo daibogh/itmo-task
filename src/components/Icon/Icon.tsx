@@ -13,6 +13,7 @@ import logoTop from "../../svg/logo-top.svg"
 import vk from "../../svg/vk.svg"
 import vkNoBg from "../../svg/vk-no-bg.svg"
 import unitedKingdom from "../../svg/united-kingdom.svg"
+import close from "../../svg/close.svg"
 
 const iconsMap: Record<SvgNames, any> = {
   "arrow-chevron-down": arrowDown,
@@ -28,6 +29,7 @@ const iconsMap: Record<SvgNames, any> = {
   vk,
   "vk-no-bg": vkNoBg,
   "united-kingdom": unitedKingdom,
+  close,
 }
 
 export type IconProps = {

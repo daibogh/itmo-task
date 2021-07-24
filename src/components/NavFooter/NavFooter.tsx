@@ -9,6 +9,8 @@ import {
 } from "../../styles/mixins/typography"
 import { scRespondTo } from "../../styles/helpers/respond-to"
 
+
+
 const Background = styled.div`
   background-color: #232473;
 `
@@ -31,6 +33,7 @@ const Container = styled.div`
 
   ${mixinText_left};
 `
+
 const FirstColumn = styled.div`
   & > *:last-child {
     margin-top: 20px;

@@ -8,7 +8,6 @@ import bg from "./bg.png"
 import { Icon } from "../Icon"
 import {
   mixinText_14_24,
-  mixinText_16_24,
   mixinText_18_32,
   mixinText_40_40,
   mixinText_56_56,

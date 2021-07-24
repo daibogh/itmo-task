@@ -1,8 +1,7 @@
-# Getting Started with Create React App
+## Available Scripts(и кастомные скрипты в конце)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+есть проблема с CORS, на локальной сборке будет работать проксирование, 
+на проде надо починить со стороны бэка или запускать фронт на том же домене 
 
 In the project directory, you can run:
 
@@ -10,14 +9,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
@@ -39,8 +30,23 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Кастомные скрипты
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `yarn lint`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Запускает линтер
+
+### `yarn lint:fix`
+
+Запускает линтер с автоматическим исправлением
+
+### `yarn styleguide`
+Запуск библиотеки компонентов (использовалась при разработке некоторых ui элементов)
+### `yarn icon`
+Генерирует интерфейс для имен иконок
+Все svg кладутся в src/svg директорию, потом запускается `yarn icon`, добавляем импорт в Icon.tsx
+после можно вызвать с помощью <Icon name="name-of-your-svg" />
+
+TODO: Порефакторить компонент: заменить img на svg 
+(убрать импорты, интегрировать svg-sprite-loader - это позволит менять цвет иконок)
+

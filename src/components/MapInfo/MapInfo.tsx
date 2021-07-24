@@ -74,7 +74,7 @@ const PhoneLink = styled(Link)`
   color: #3951e7;
 `
 const MapInfo: React.FC = () => {
-  const [modalState, { setModalState }] = useAtom(modalStateAtom)
+  const setModalState = useAtom(modalStateAtom)[1].setModalState
   const openFormModal = useCallback(
     () => setModalState("form"),
     [setModalState]

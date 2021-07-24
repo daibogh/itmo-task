@@ -10,6 +10,7 @@ import {
 } from "../../styles/mixins/typography"
 import { Card } from "../../components/Card"
 import Accordeon from "../../components/Accordeon/Accordeon"
+import { useNews } from "../../hooks/api/useNews"
 
 const Container = styled.div`
   ${scRespondTo.w800} {
@@ -58,73 +59,23 @@ const AccordeonsContainer = styled.div`
     margin-top: 8px;
   }
 `
-const MainContent: React.FC = () => (
-  <Container>
-    <Title>Новости и события</Title>
-    <NewsContainer>
-      <Card
-        id={1}
-        title=""
-        image_small=""
-        image_big=""
-        date={new Date()}
-        url=""
-        lead=""
-      />
-      <Card
-        id={1}
-        title=""
-        image_small=""
-        image_big=""
-        date={new Date()}
-        url=""
-        lead=""
-      />
-      <Card
-        id={1}
-        title=""
-        image_small=""
-        image_big=""
-        date={new Date()}
-        url=""
-        lead=""
-      />
-      <Card
-        id={1}
-        title=""
-        image_small=""
-        image_big=""
-        date={new Date()}
-        url=""
-        lead=""
-      />
-      <Card
-        id={1}
-        title=""
-        image_small=""
-        image_big=""
-        date={new Date()}
-        url=""
-        lead=""
-      />
-      <Card
-        id={1}
-        title=""
-        image_small=""
-        image_big=""
-        date={new Date()}
-        url=""
-        lead=""
-      />
-    </NewsContainer>
-    <CenteredTitle>Дисциплины</CenteredTitle>
-    <AccordeonsContainer>
-      <Accordeon />
-      <Accordeon />
-      <Accordeon />
-      <Accordeon />
-      <Accordeon />
-    </AccordeonsContainer>
-  </Container>
-)
+const MainContent: React.FC = () => {
+  const news = useNews()
+  return (
+    <Container>
+      <Title>Новости и события</Title>
+      <NewsContainer>
+        {news && news.map((data) => <Card key={data.id} {...data} />)}
+      </NewsContainer>
+      <CenteredTitle>Дисциплины</CenteredTitle>
+      <AccordeonsContainer>
+        <Accordeon />
+        <Accordeon />
+        <Accordeon />
+        <Accordeon />
+        <Accordeon />
+      </AccordeonsContainer>
+    </Container>
+  )
+}
 export default MainContent

@@ -1,7 +1,10 @@
 import React from "react"
 import styled from "styled-components/macro"
 
-type LinkProps = {} & Pick<React.HTMLProps<HTMLLinkElement>, "href">
+type LinkProps = {} & Pick<
+  React.HTMLProps<HTMLLinkElement>,
+  "href" | "target" | "rel"
+>
 const _Link = styled.a`
   &,
   &:hover,

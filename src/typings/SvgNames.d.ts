@@ -2,6 +2,7 @@ declare type SvgNames =
   | 'arrow-chevron-down'
   | 'arrow-chevron-left'
   | 'arrow-chevron-right'
+  | 'close'
   | 'email'
   | 'fb'
   | 'instagram'
