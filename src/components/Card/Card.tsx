@@ -26,7 +26,7 @@ const CardContainer = styled.div`
   ${scRespondTo["pre-md"]} {
     width: 384px;
   }
-  height: 448px;
+  height: auto;
   background: #ffffff;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
   border-radius: 16px;

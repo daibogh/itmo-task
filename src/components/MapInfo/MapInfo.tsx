@@ -13,6 +13,7 @@ import { Button } from "../Button"
 import { Icon } from "../Icon"
 import { BackgroundColor } from "../../styles/colors"
 import { ButtonColor } from "../Button/Button"
+import { scRespondTo } from "../../styles/helpers/respond-to"
 
 const EmailButton = styled(Button)`
   padding: 9px 24px;
@@ -33,15 +34,24 @@ const Background = styled.div`
 `
 const InfoContainer = styled.div`
   position: absolute;
-  top: 60px;
-  left: 211px;
   padding: 40px 72px;
-  width: 480px;
+  width: 100%;
   height: 296px;
   color: #222222;
   background: #ffffff;
   border-radius: 8px;
   ${mixinText_left};
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  ${scRespondTo.xms} {
+    width: 480px;
+  }
+  ${scRespondTo.sm} {
+    transform: none;
+    top: 60px;
+    left: 211px;
+  }
 `
 const Title = styled.div`
   ${mixinText_40_40};

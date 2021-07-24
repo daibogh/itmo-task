@@ -7,19 +7,28 @@ import {
   mixinText_14_24,
   mixinText_left,
 } from "../../styles/mixins/typography"
+import { scRespondTo } from "../../styles/helpers/respond-to"
 
 const Background = styled.div`
   background-color: #232473;
 `
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, minmax(auto, 304px));
+  padding: 32px 24px 12px;
+  grid-template-columns: repeat(1, minmax(auto, 304px));
+  row-gap: 10px;
+  ${scRespondTo.xms} {
+    grid-template-columns: repeat(2, minmax(auto, 304px));
+  }
+  ${scRespondTo.sm} {
+    padding: 32px 24px 0;
+    grid-template-columns: repeat(4, minmax(auto, 304px));
+  }
   column-gap: 32px;
   min-height: 240px;
   margin: 0 auto;
   max-width: 1216px;
-  padding-top: 32px;
-  padding-bottom: 24px;
+
   ${mixinText_left};
 `
 const FirstColumn = styled.div`

@@ -9,9 +9,14 @@ import { scRespondTo } from "../../styles/helpers/respond-to"
 
 const Background = styled.div`
   background-color: #1a1b57;
-  padding: 10px 209px;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+  flex-direction: column;
+  ${scRespondTo.sm} {
+    padding: 10px 209px;
+    flex-direction: row;
+  }
   ${scRespondTo.max} {
     padding: 10px 409px;
   }
