@@ -1,5 +1,6 @@
 import styled from "styled-components/macro"
-import React from "react"
+import React, { useCallback } from "react"
+import { useAtom } from "@reatom/react"
 import mapImg from "./yandex-map.png"
 import {
   mixinText_16_22,
@@ -14,6 +15,7 @@ import { Icon } from "../Icon"
 import { BackgroundColor } from "../../styles/colors"
 import { ButtonColor } from "../Button/Button"
 import { scRespondTo } from "../../styles/helpers/respond-to"
+import { modalStateAtom } from "../../store/modal-state"
 
 const EmailButton = styled(Button)`
   padding: 9px 24px;
@@ -36,7 +38,6 @@ const InfoContainer = styled.div`
   position: absolute;
   padding: 40px 72px;
   width: 100%;
-  height: 296px;
   color: #222222;
   background: #ffffff;
   border-radius: 8px;
@@ -46,6 +47,7 @@ const InfoContainer = styled.div`
   transform: translate(-50%, -50%);
   ${scRespondTo.xms} {
     width: 480px;
+    height: 296px;
   }
   ${scRespondTo.sm} {
     transform: none;
@@ -71,25 +73,33 @@ const Phone = styled.div`
 const PhoneLink = styled(Link)`
   color: #3951e7;
 `
-const MapInfo: React.FC = () => (
-  <Background>
-    <InfoContainer>
-      <Title>Контакты</Title>
-      <Address>
-        г. Санкт-Петербург, Кронверкский пр-т, д.49, ауд. 155 (вход со стороны
-        ул. Сытнинской)
-      </Address>
-      <Phone>
-        Тел: <PhoneLink href="tel:+79315380170">+7 (931) 538-01-70</PhoneLink>
-      </Phone>
-      <EmailButton
-        backgroundColor={BackgroundColor.Red}
-        color={ButtonColor.white}
-      >
-        <Icon name="email" />
-        Написать нам
-      </EmailButton>
-    </InfoContainer>
-  </Background>
-)
+const MapInfo: React.FC = () => {
+  const [modalState, { setModalState }] = useAtom(modalStateAtom)
+  const openFormModal = useCallback(
+    () => setModalState("form"),
+    [setModalState]
+  )
+  return (
+    <Background>
+      <InfoContainer>
+        <Title>Контакты</Title>
+        <Address>
+          г. Санкт-Петербург, Кронверкский пр-т, д.49, ауд. 155 (вход со стороны
+          ул. Сытнинской)
+        </Address>
+        <Phone>
+          Тел: <PhoneLink href="tel:+79315380170">+7 (931) 538-01-70</PhoneLink>
+        </Phone>
+        <EmailButton
+          onClick={openFormModal}
+          backgroundColor={BackgroundColor.Red}
+          color={ButtonColor.white}
+        >
+          <Icon name="email" />
+          Написать нам
+        </EmailButton>
+      </InfoContainer>
+    </Background>
+  )
+}
 export default MapInfo

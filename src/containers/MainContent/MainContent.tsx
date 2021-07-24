@@ -2,8 +2,10 @@ import React from "react"
 import styled from "styled-components/macro"
 import { scRespondTo } from "../../styles/helpers/respond-to"
 import {
+  mixinText_28_28,
   mixinText_40_40,
   mixinText_bold,
+  mixinText_center,
   mixinText_left,
 } from "../../styles/mixins/typography"
 import { Card } from "../../components/Card"
@@ -21,11 +23,16 @@ const Container = styled.div`
   margin: 80px auto 0;
 `
 const Title = styled.div`
-  ${mixinText_40_40};
+  ${mixinText_28_28};
   ${mixinText_bold};
   ${mixinText_left};
+  ${mixinText_center};
   margin-bottom: 40px;
   color: #222222;
+  ${scRespondTo.sm} {
+    ${mixinText_left};
+    ${mixinText_40_40};
+  }
 `
 const NewsContainer = styled.div`
   display: grid;

@@ -5,6 +5,7 @@ import { reatomContext } from "@reatom/react"
 import { Header } from "./containers/Header"
 import { MainContent } from "./containers/MainContent"
 import { Footer } from "./containers/Footer"
+import { Modals } from "./containers/Modals"
 
 function App() {
   const store = createStore()
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <MainContent />
         <Footer />
+        <Modals />
       </div>
     </reatomContext.Provider>
   )
